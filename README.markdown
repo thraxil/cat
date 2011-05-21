@@ -42,7 +42,7 @@ Tutorial
 run cat by typing `python cat.py` at a command prompt (and from within
 the folder that `cat.py` is in). you should see a window like:
 
-!https://github.com/thraxil/cat/raw/master/cat1.png
+![cat 1](https://github.com/thraxil/cat/raw/master/cat1.png)
 
 Each cell has 8 bits of state (ie, 256 different possible states).
 CAT displays the state of each cell on the grid by mapping it to a
@@ -87,7 +87,7 @@ when you click 'step', this should set every cell on
 the grid to 255 (white). it should 
 look like:
 
-!https://github.com/thraxil/cat/raw/master/cat2.png
+![cat 2](https://github.com/thraxil/cat/raw/master/cat2.png)
 
 similarly, entering:
 
@@ -96,7 +96,7 @@ similarly, entering:
 should have the opposite effect, turning every cell off (the same as
 hitting the 'clear' button):
 
-!https://github.com/thraxil/cat/raw/master/cat3.png
+![cat 3](https://github.com/thraxil/cat/raw/master/cat3.png)
 
 `c` is a variable (actually a Numeric array, but for now we'll
 pretend that it's just a simple variable. later on we'll take a closer
