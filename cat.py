@@ -13,10 +13,9 @@
 from random import Random
 from Tkinter import *
 from Numeric import *
-import MLab
-import Pmw
+import numpy
+import numpy.random
 from tkSimpleDialog import Dialog
-import tempfile, time, os 
 import Image
 import ImageTk
 
@@ -30,13 +29,7 @@ for val in range (256):
     color_cache[val] = "#%02x%02x%02x" % (val,val,val)
 
 def array2image(a):
-    if a.typecode() == UnsignedInt8:
-        mode = "L"
-    elif a.typecode() == Float32:
-        mode = "F"
-    else:
-        raise ValueError, "unsupported image mode"
-    return Image.fromstring(mode, (a.shape[1], a.shape[0]), a.tostring())
+    return Image.fromstring("L", (a.shape[1], a.shape[0]), a.tostring())
 
 class Cat:
     def __init__(self,parent):
@@ -89,7 +82,7 @@ class Cat:
                              height = self.display_height)
 
 
-        self.grid = MLab.rand(self.rows + 2, self.cols + 2) * 255
+        self.grid = numpy.random.rand(self.rows + 2, self.cols + 2) * 255
         self.grid = self.grid.astype('i')
 
         self.initial_draw()
@@ -314,7 +307,7 @@ class Cat:
         self.display()
 
     def random_bit(self):
-        r = MLab.rand(self.rows,self.cols) * 2
+        r = numpy.random.rand(self.rows,self.cols) * 2
         r = r.astype('i')
         return r
 
@@ -342,7 +335,7 @@ class Cat:
 
     def randomize_grid(self):
         """ set each cell on the grid to a random value """
-        self.grid = MLab.rand(self.rows + 2, self.cols + 2) * 255
+        self.grid = numpy.random.rand(self.rows + 2, self.cols + 2) * 255
         self.grid = self.grid.astype('i')
         self.display()
 
